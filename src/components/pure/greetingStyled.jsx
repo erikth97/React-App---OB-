@@ -19,9 +19,16 @@ const GreetingStyled = () => {
     // y asi controlar si el usuario esta o no logeado
     const [logged, setLogged] = useState(false)
 
+    const greetingUser = () => (<p>Hola, {props.name}</p>) ;
+    const pleaseLogin = () =>  (<p>Please login</p>);
+
     return (
         <div style={ logged ? loggedStyle : unloggedStyle }>
-              <p>Hola, {props.name}</p>
+             { logged ? 
+                greetingUser
+                :
+                pleaseLogin
+             }
               <button onClick={() => {
                 console.log('Boton pulsado');
                 setLogged(!logged);
