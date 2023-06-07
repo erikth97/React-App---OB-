@@ -28,11 +28,22 @@ const TaskListComponent = () => {
         console.log('TODO: Cambiar estado de una tarea')
     }
 
-
     return (
         <div>
-            <div> 
-                <h1>Your Task:</h1>
+            <div className='col-12'>
+                <div className='card'>
+                      {/* Card Header {title} */}
+                     <div className='card-header p-3'>
+                        <h5>
+                            Your Task:
+                        </h5>
+                     </div>
+                     {/*  Card Body {content} */}
+                     <div className='card-body'>
+
+                     </div>
+               </div> 
+               
             </div>
             {/*  TODO Aplicar un For/Map paa renderizar una lista */}
             <TaskComponent task={defaultTask}></TaskComponent>

@@ -5,7 +5,6 @@ import { Task } from '../../models/task.class';
 //importamos la hoa de estilos de task.scss
 import '../../styles/task.scss';
 
-
 const TaskComponent = ({ task }) => {
     
     useEffect(() => {
