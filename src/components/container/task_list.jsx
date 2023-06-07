@@ -5,6 +5,7 @@ import TaskComponent from '../pure/task';
 
 // Importamos la hoja de estilos de task.scss
 import '../../styles/task.scss'
+import TaskForm from '../pure/forms/taskForm';
 
 
 const TaskListComponent = () => {
@@ -16,8 +17,6 @@ const TaskListComponent = () => {
     // Estado del componente
     const [task, setTask] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
-
-
 
     // Control del ciclo de vida del componente
     useEffect(() => {
@@ -55,12 +54,19 @@ const TaskListComponent = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {/* TODO Iterar sobre una lista de tareas */}
-                                <TaskComponent task={defaultTask}></TaskComponent>
+                            { task.map((task, index) => {
+                                    return (
+                                            <TaskComponent 
+                                                key={index} 
+                                                task={task}>
+                                            </TaskComponent>
+                                        )
+                                    }
+                                )}
                             </tbody>
-
                         </table>
                      </div>
+                     <TaskForm></TaskForm>
                </div> 
 
             </div>
