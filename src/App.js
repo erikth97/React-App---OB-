@@ -4,6 +4,7 @@ import Greeting from './components/pure/greeting';
 import Greetingf from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
 import GreetingStyled from './components/pure/greetingStyled';
+import Father from './components/container/father';
 
 function App() {
   return (
@@ -15,10 +16,12 @@ function App() {
           {/* Componente de ejemplo funcional  */}           
           {/*<Greetingf name="Erik"></Greetingf>  */} 
           {/* Componente de listado de Tareas     */}           
-          {/*<TaskListComponent></TaskListComponent> */}
-          <GreetingStyled name="Erik"></GreetingStyled>
+          {/* <TaskListComponent></TaskListComponent> */}
+          {/* <GreetingStyled name="Erik"></GreetingStyled> */}
         {/*</header>*/}
-        <TaskListComponent></TaskListComponent> 
+          {/* Gestion de Eventos */}
+          <Father></Father>        
+          {/* <TaskListComponent></TaskListComponent> */}
     </div>
   );
 }
