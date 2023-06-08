@@ -8,8 +8,8 @@ const Father = () => {
 }
 
     return (
-        <div>
-            <Child></Child>
+        <div style={{background: 'tomato', padding: '10px' }}>
+            <Child name= 'Erik' send={showMessage}></Child>
         </div>
     );
 }
