@@ -15,28 +15,31 @@ const TaskListComponent = () => {
     const defaultTask3 = new Task('Example3', 'Description 3', false, LEVELS.BLOCKING);
 
     // Estado del componente
-    const [task, setTask] = useState([defaultTask1, defaultTask2, defaultTask3]);
+    const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
     const [loading, setLoading] = useState(true);
 
     // Control del ciclo de vida del componente
     useEffect(() => {
-        console.log('Task state has been modified');
-        setLoading(false);
+        console.log('Task State has been modified');
+        setTimeout(() => {
+            setLoading(false);
+        }, 2000);
         return () => {
             console.log('TaskList component is going to unmount...')
-        };
-    }, [task]);
+        }
+    }, [tasks])
 
-     
+ 
     function completeTask(task){
         console.log('Complete this Task:', task);
-        const index = task.indexOf(task);
-        const tempTask = [...task];
-        tempTask[index].completed = !tempTask[index].completed;
-        // We update the state of component with the new list of task and it will update the
-        // Iteration of the tasks in order to show the task update
-        setTask(tempTask);
-    } 
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks[index].completed = !tempTasks[index].completed;
+        // We update the state of the component with the new list of tasks and it will update the
+        // Iteration of the tasks in order to show the task updated
+        setTasks(tempTasks);
+    }
+
 
     return (
         <div>
@@ -60,7 +63,7 @@ const TaskListComponent = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                            { task.map((task, index) => {
+                            { tasks.map((task, index) => {
                                     return (
                                             <TaskComponent 
                                                 key={index} 
