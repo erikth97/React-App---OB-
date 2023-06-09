@@ -30,6 +30,12 @@ const TaskListComponent = () => {
      
     function completeTask(task){
         console.log('Complete this Task:', task);
+        const index = task.indexOf(task);
+        const tempTask = [...task];
+        tempTask[index].completed = !tempTask[index].completed;
+        // We update the state of component with the new list of task and it will update the
+        // Iteration of the tasks in order to show the task update
+        setTask(tempTask);
     } 
 
     return (
@@ -58,8 +64,9 @@ const TaskListComponent = () => {
                                     return (
                                             <TaskComponent 
                                                 key={index} 
-                                                task={task}>
+                                                task={task}
                                                 complete={completeTask}
+                                                >
                                             </TaskComponent>
                                         )
                                     }
