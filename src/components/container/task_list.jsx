@@ -27,10 +27,10 @@ const TaskListComponent = () => {
         };
     }, [task]);
 
-
-    const changeCompleted = (id) => {
-        console.log('TODO: Cambiar estado de una tarea')
-    }
+     
+    function completeTask(task){
+        console.log('Complete this Task:', task);
+    } 
 
     return (
         <div>
@@ -59,6 +59,7 @@ const TaskListComponent = () => {
                                             <TaskComponent 
                                                 key={index} 
                                                 task={task}>
+                                                complete={completeTask}
                                             </TaskComponent>
                                         )
                                     }

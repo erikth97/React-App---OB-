@@ -6,8 +6,7 @@ import { Task } from '../../models/task.class';
 import '../../styles/task.scss';
 import { LEVELS } from '../../models/levels.enum';
 
-
-    const TaskComponent = ({ task }) => {
+    const TaskComponent = ({ task, complete }) => {
     
     useEffect(() => {
         console.log('Created Task')
@@ -53,9 +52,9 @@ import { LEVELS } from '../../models/levels.enum';
      */
         function taskCompletedIcon(){
             if(task.completed){
-                return (<i className='bi-toggle-on' style={{color: 'green'}}></i>)
+                return (<i onClick={() => complete(task)} className='bi-toggle-on task-action' style={{color: 'green'}}></i>)
             }else{
-                return (<i className='bi-toggle-off' style={{color: 'grey'}}></i>)
+                return (<i onClick={() => complete(task)} className='bi-toggle-off' style={{color: 'grey'}}></i>)
             }
         }
     
@@ -85,7 +84,8 @@ import { LEVELS } from '../../models/levels.enum';
 
 
 TaskComponent.propTypes = {
-      task: PropTypes.instanceOf(Task)
+      task: PropTypes.instanceOf(Task).isRequired,
+      complete: PropTypes.func.isRequired
 };
 
 
