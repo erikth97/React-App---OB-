@@ -29,7 +29,6 @@ const TaskListComponent = () => {
         }
     }, [tasks])
 
- 
     function completeTask(task){
         console.log('Complete this Task:', task);
         const index = tasks.indexOf(task);
@@ -37,6 +36,14 @@ const TaskListComponent = () => {
         tempTasks[index].completed = !tempTasks[index].completed;
         // We update the state of the component with the new list of tasks and it will update the
         // Iteration of the tasks in order to show the task updated
+        setTasks(tempTasks);
+    }
+
+    function deleteTask(task){
+        console.log('Delete this Task:', task);
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index,1);
         setTasks(tempTasks);
     }
 
@@ -69,6 +76,7 @@ const TaskListComponent = () => {
                                                 key={index} 
                                                 task={task}
                                                 complete={completeTask}
+                                                remove={deleteTask}
                                                 >
                                             </TaskComponent>
                                         )
