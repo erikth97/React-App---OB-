@@ -93,9 +93,8 @@ const TaskListComponent = () => {
                             </tbody>
                         </table>
                      </div>
-                     <TaskForm></TaskForm>
                </div> 
-
+               <TaskForm add={addTask}></TaskForm>
             </div>
 
             {/*<TaskComponent task={defaultTask}></TaskComponent>*/}
