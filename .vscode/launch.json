@@ -5,18 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "firefox",
-            "request": "launch",
-            "reAttach": true,
-            "name": "Firefox debug",
-            "url": "http://localhost/3000",
-            "webRoot": "${workspaceFolder}"
-        },
-        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost/3000",
+            "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         }
     ]
