@@ -5,6 +5,7 @@ import Greetingf from './components/pure/greetingF';
 import TaskListComponent from './components/container/task_list';
 import GreetingStyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
+import OptionalRender from './components/pure/optionalRender';
 
 function App() {
   return (
@@ -20,8 +21,12 @@ function App() {
           {/* <GreetingStyled name="Erik"></GreetingStyled> */}
         {/*</header>*/}
           {/* Gestion de Eventos */}
-          {/*<Father></Father> */}       
-          <TaskListComponent></TaskListComponent> 
+          {/*<Father></Father> */}
+          {/*Ejemplo de Renderizado Condicional */}    
+          <OptionalRender></OptionalRender>
+
+          {/*PROYECTO FINAL */}
+          {/*<TaskListComponent></TaskListComponent>*/} 
     </div>
   );
 }
