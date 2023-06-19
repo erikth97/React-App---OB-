@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 // Login / Logout buttons
- const LoginButton = (loginAction) => {
+ const LoginButton = ({loginAction}) => {
     return (
         <button onClick={loginAction}>Login</button>
     )
