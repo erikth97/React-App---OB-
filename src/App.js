@@ -23,10 +23,10 @@ function App() {
           {/* Gestion de Eventos */}
           {/*<Father></Father> */}
           {/*Ejemplo de Renderizado Condicional */}    
-          <OptionalRender></OptionalRender>
+          {/*<OptionalRender></OptionalRender>*/}
 
           {/*PROYECTO FINAL */}
-          {/*<TaskListComponent></TaskListComponent>*/} 
+          <TaskListComponent></TaskListComponent>
     </div>
   );
 }
