@@ -7,12 +7,12 @@ import TaskComponent from '../pure/task';
 import '../../styles/task.scss'
 import TaskForm from '../pure/forms/taskForm';
 
-
 const TaskListComponent = () => {
 
     const defaultTask1 = new Task('Example1', 'Description1', true, LEVELS.NORMAL);
     const defaultTask2 = new Task('Example2', 'Description 2', false, LEVELS.URGENT);
     const defaultTask3 = new Task('Example3', 'Description 3', false, LEVELS.BLOCKING);
+
 
     // Estado del componente
     const [tasks, setTasks] = useState([defaultTask1, defaultTask2, defaultTask3]);
@@ -49,12 +49,58 @@ const TaskListComponent = () => {
 
     function addTask(task){
         console.log('Delete this task:', task);
-        const index = tasks.indexOf(task);
         const tempTasks = [...tasks];
         tempTasks.push(task);
         setTasks(tempTasks);
     }
 
+    const Table = () => {
+        return (
+            <table>
+                <thead>
+                    <tr>
+                        <th scope='col'>Title</th>
+                        <th scope='col'>Description</th>
+                        <th scope='col'>Priority</th>
+                        <th scope='col'>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                { tasks.map((task, index) => {
+                        return (
+                                <TaskComponent 
+                                    key={index} 
+                                    task={task}
+                                    complete={completeTask}
+                                    remove={deleteTask}
+                                    >
+                                </TaskComponent>
+                            )
+                        }
+                    )}
+                </tbody>
+        </table>
+        )
+    }
+
+    let taskTable;
+
+    if(tasks.length >0){
+        taskTable = <Table></Table>
+    }else {
+        taskTable = (
+            <div>
+                <h3>There are no task to show</h3>
+                <h4>Please, create one</h4>
+            </div>
+        )
+    }
+
+    const loadingStyle = {
+        color: 'grey',
+        fontSize: '30px',
+        fontWeight: 'bold'
+    }
 
     return (
         <div>
@@ -62,42 +108,18 @@ const TaskListComponent = () => {
                 <div className='card'>
                       {/* Card Header {title} */}
                      <div className='card-header p-3'>
-                        <h5>
+                         <h5>
                             Your Task:
-                        </h5>
+                         </h5>
                      </div>
-                     {/*  Card Body {content} */}
+                      {/*  Card Body (content) */}
                      <div className='card-body' data-mdb-perfect-scrollbar= 'true' style={ {position: 'relative', height: '400px'} }>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th scope='col'>Title</th>
-                                    <th scope='col'>Description</th>
-                                    <th scope='col'>Priority</th>
-                                    <th scope='col'>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            { tasks.map((task, index) => {
-                                    return (
-                                            <TaskComponent 
-                                                key={index} 
-                                                task={task}
-                                                complete={completeTask}
-                                                remove={deleteTask}
-                                                >
-                                            </TaskComponent>
-                                        )
-                                    }
-                                )}
-                            </tbody>
-                        </table>
+                     {/* TODO Add Loading Spinner*/}
+                       {loading ? (<p style={loadingStyle}>Loading task...</p>) : taskTable}
                      </div>
-               </div> 
-               <TaskForm add={addTask}></TaskForm>
+                </div> 
             </div>
-
-           {/* <TaskComponent task={defaultTask}></TaskComponent> */}
+               <TaskForm add={addTask} length={tasks.length} ></TaskForm>
         </div>
     );
 };
