@@ -6,6 +6,8 @@ import TaskListComponent from './components/container/task_list';
 import GreetingStyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
+import LoginFormik from './components/pure/forms/loginFormik';
+import Loginformik from './components/pure/forms/loginFormik';
 
 function App() {
   return (
@@ -24,9 +26,12 @@ function App() {
           {/*<Father></Father> */}
           {/*Ejemplo de Renderizado Condicional */}    
           {/*<OptionalRender></OptionalRender>*/}
+          
+          {/*Ejemplos de uso de Formik y yup */}
+          <Loginformik></Loginformik>
 
           {/*PROYECTO FINAL */}
-          <TaskListComponent></TaskListComponent>
+          {/*<TaskListComponent></TaskListComponent>*/}
     </div>
   );
 }
