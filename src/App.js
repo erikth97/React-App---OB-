@@ -8,6 +8,7 @@ import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
 import LoginFormik from './components/pure/forms/loginFormik';
 import Loginformik from './components/pure/forms/loginFormik';
+import Registerformik from './components/pure/forms/registerFormik';
 
 function App() {
   return (
@@ -28,7 +29,8 @@ function App() {
           {/*<OptionalRender></OptionalRender>*/}
           
           {/*Ejemplos de uso de Formik y yup */}
-          <Loginformik></Loginformik>
+          {/*<Loginformik></Loginformik> */}
+          <Registerformik></Registerformik>
 
           {/*PROYECTO FINAL */}
           {/*<TaskListComponent></TaskListComponent>*/}
