@@ -30,7 +30,7 @@ function App() {
           
           {/*Ejemplos de uso de Formik y yup */}
           {/*<Loginformik></Loginformik> */}
-          <Registerformik></Registerformik>
+          {/* <Registerformik></Registerformik>*/}
 
           {/*PROYECTO FINAL */}
           {/*<TaskListComponent></TaskListComponent>*/}
