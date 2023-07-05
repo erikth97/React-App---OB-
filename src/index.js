@@ -6,15 +6,15 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 // !Importante los estilos propios deben de ir debajo de bootstrap
 import './index.css';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AppRoutingOne from './ApproutingOne';
+import ApproutingOne from './ApproutingOne';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
    {/* <App /> */}
-   <AppRoutingOne></AppRoutingOne>
+   <ApproutingOne/>
   </React.StrictMode>
 );
 
