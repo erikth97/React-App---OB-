@@ -1,35 +1,37 @@
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 import HomePage from './pages/home/HomePage';
-import NotFoundPage from './pages/404/NotFoundPage';
-import AboutPage from "./pages/about-fags/AboutPage";
+import Notfoundpage from './pages/404/NotFoundPage';
+import Aboutpage from './pages/about-faqs/AboutPage';
+import Profilepage from './pages/profile/ProfilePage';
+import Taskspage from './pages/tasks/TasksPage';
 
-function ApproutingOne() {
+function AppRoutingOne() {
   return (
-      <Router>
-       <div>
-          <aside>
-            <Link to='/'>|| Home |</Link>
-            <Link to='/about'>| ABOUT |</Link>
-            <Link to='/faqs'>| FAQs |</Link>
-            <link to='/any404'>| Not Existing Route ||</link>
-          </aside>
-       
-          <main>
-          <Switch>
-            <Route exact path="/" Component={ HomePage } />
-            <Route path='/(about|faqs)' component={ AboutPage } />
-            {/* 404 - page not found*/}
-            <Route Component={ NotFoundPage } />
-          </Switch>
-          </main>
-       
-       </div>
+    <Router>
+         <div>
+            <aside>
+              <Link to='/'>|| HOME |</Link>
+              <Link to='/about'>| ABOUT |</Link>
+              <Link to='/faqs'>| FAQs ||</Link>
+              <Link to='/any404'>| Not Exsisting Route ||</Link>
+            </aside>
 
+            <main>
+              <Switch>
+                <Route exact path='/' component={ HomePage } />
+                <Route path='/(about|faqs)' component={ Aboutpage }/>
+                <Route path='/profile' component={ Profilepage } />
+                <Route path='/tasks' component={ Taskspage } />
+                {/* 404- Page Not Found*/}
+                <Route component={ Notfoundpage } />
+            </Switch>
+            </main>
 
+         </div>
 
-      </Router>
+    </Router>
   );
 }
 
-export default ApproutingOne;
+export default AppRoutingOne;

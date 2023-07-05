@@ -7,14 +7,14 @@ const Aboutpage = () => {
     const location = useLocation();
     const history = useHistory();
 
-    console.log('We are in Route:', location.pathname); // '/about | /faqs'
+    console.log('We are in Router:', location.pathname); // '/about | /faqs'
 
     const navigate = (path) => {
         history.push(path);
     }
 
     const goBack = () => {
-        history.goBack();
+        history.goBack()
     }
 
     const goForward = () => {
@@ -24,16 +24,16 @@ const Aboutpage = () => {
     return (
         <div>
             <h1>
-                About | FAQs
+                About | FAQs 
             </h1>
             <div>
-                <button onClick={ () => navigate('/')}>
-                    Go To Home
+                <button onClick={ () =>navigate('/')}>
+                    Go to Home
                 </button>
-                <button onClick = { goBack }>
+                <button onClick={ goBack }>
                     Go Back
                 </button>
-                <button onClick = { goForward }>
+                <button onClick={ goForward }>
                     Go Forward
                 </button>
             </div>
@@ -41,4 +41,4 @@ const Aboutpage = () => {
     );
 }
 
-export default Aboutpage;
+export default Aboutpage; 

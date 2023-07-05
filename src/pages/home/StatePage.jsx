@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-const StatePage = () => {
     const Statepage = () =>{
 
     return (
@@ -12,4 +11,4 @@ const StatePage = () => {
     );
 }
 
-export default StatePage;
+export default Statepage;

@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom'
 
 // Añadimos Bootstrap a nuestro proyecto
 import 'bootstrap/dist/css/bootstrap.css'
@@ -9,13 +9,14 @@ import './index.css';
 
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ApproutingOne from './ApproutingOne';
+import AppRoutingOne from './AppRoutingOne';
 
 ReactDOM.render(
   <React.StrictMode>
    {/* <App /> */}
-   <ApproutingOne/>
-  </React.StrictMode>
+  <AppRoutingOne></AppRoutingOne>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
