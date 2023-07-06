@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -6,10 +7,10 @@ import * as Yup from 'yup';
 const loginSchema = Yup.object().shape(
     {
         email: Yup.string()
-        .email('Invalid email format')
-        .required('Email is required'),
+            .email('Invalid email format')
+            .required('Email is required'),
         password: Yup.string()
-        .required('Password is required')
+            .required('Password is required')
     }
 );
 
@@ -21,6 +22,7 @@ const Loginformik = () => {
         password: ''
     }
 
+    const history = useHistory();
 
     return (
         <div>
@@ -32,13 +34,13 @@ const Loginformik = () => {
                 validationSchema= { loginSchema } 
                 // onsubmit Event
                 onSubmit={async (values) => {
-                    await new Promise((resolve) => setTimeout(resolve, 1000));
+                    await new Promise((r) => setTimeout(r, 1000));
                     alert(JSON.stringify(values, null, 2));
                     // We save the data in the localstorage
-                    localStorage.setItem('credentials',values)
-                    }}
+                    await localStorage.setItem('credentials', values);
+                    history.push('/profile');
+                }}
             >
-
             {/* We obtain props from fornik */}
 
             {({ values,
