@@ -5,6 +5,7 @@ import Notfoundpage from './pages/404/NotFoundPage';
 import Aboutpage from './pages/about-faqs/AboutPage';
 import Profilepage from './pages/profile/ProfilePage';
 import Taskspage from './pages/tasks/TasksPage';
+import Taskdetailpage from './pages/profile/TaskDetailpage';
 
 function AppRoutingOne() {
   return (
@@ -23,6 +24,7 @@ function AppRoutingOne() {
                 <Route path='/(about|faqs)' component={ Aboutpage }/>
                 <Route path='/profile' component={ Profilepage } />
                 <Route path='/tasks' component={ Taskspage } />
+                <Route path='/task/:id' component={ Taskdetailpage }/>
                 {/* 404- Page Not Found*/}
                 <Route component={ Notfoundpage } />
             </Switch>

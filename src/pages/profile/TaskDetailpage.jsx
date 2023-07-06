@@ -7,7 +7,7 @@ const Taskdetailpage = () => {
 
     return (
         <div>
-           <h1>Task Detail</h1>        
+           <h1>Task Detail - {id}</h1>        
         </div>
     );
 }
