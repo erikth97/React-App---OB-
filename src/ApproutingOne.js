@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch, Link, Redirect } from 'react-ro
 
 import HomePage from './pages/home/HomePage';
 import Notfoundpage from './pages/404/NotFoundPage';
-
+// me quede en 20 min
 import Aboutpage from './pages/about-faqs/AboutPage';
 import Profilepage from './pages/profile/ProfilePage';
 import Taskspage from './pages/tasks/TasksPage';
