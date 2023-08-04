@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 
-    const Notfoundpage = () => {
+const Notfoundpage = () => {
         
         const history = useHistory();
 
