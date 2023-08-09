@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const Taskdetailpage = (task) => {
+const Taskdetailpage = ({task}) => {
 
     const {id} = useParams();
 
