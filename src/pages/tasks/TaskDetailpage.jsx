@@ -7,9 +7,9 @@ const Taskdetailpage = ({task}) => {
 
     return (
         <div>
-           <h1>Task Detail - {id}</h1>  
-           <h2>{task.name}</h2>    
-           <h3>{task.description}</h3> 
+            <h1>Task Detail - {id}</h1>
+            <h2>{task.name}</h2>
+            <h3>{task.description}</h3>
         </div>
     );
 }
