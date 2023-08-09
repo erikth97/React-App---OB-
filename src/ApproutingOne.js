@@ -29,7 +29,7 @@ function AppRoutingOne() {
   ]
 
   useEffect(() => {
-    const logged = localStorage.getItem('credentials');
+    let logged = localStorage.getItem('credentials');
     console.log('User Logged?' , logged)
   }, [])
 
@@ -49,7 +49,7 @@ function AppRoutingOne() {
             <main>
               <Switch>
                 <Route exact path='/' component={ HomePage } />
-                <Route exact path='/online-state' component={ Statepage } />
+                <Route exact path='/online-state' component={ Statepage} />
                 <Route path='/login' component={ Loginpage }>
                   {
                     logged ? 
@@ -70,7 +70,7 @@ function AppRoutingOne() {
                     <Profilepage/>
                     :
                     () => {
-                      alert('You must be logged in. Redirecting to login...')
+                      alert('You must be logged in. redirecting to login...')
                       return(<Redirect to='/login'/>)
                     }
                   }
@@ -83,7 +83,6 @@ function AppRoutingOne() {
                   ({match}) =>(<Taskdetailpage task={taskList[match.params.id-1]} />)          
                 }
                 >     
-
                 </Route>
                 {/* 404- Page Not Found*/}
                 <Route component={ Notfoundpage } />
