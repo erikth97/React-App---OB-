@@ -26,7 +26,7 @@ const HomePage = () => {
     <div>
         <h1>Home Page</h1>
         <button onClick={() => navigateProps('/online-state')}>
-            Go to Page with State / Query Params
+            Go to Page with State / Query Params   
         </button>
         <button onClick={() => navigate('/profile')}>
             Go to Profile
