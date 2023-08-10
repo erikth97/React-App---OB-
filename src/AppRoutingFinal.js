@@ -1,13 +1,12 @@
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch ,Redirect } from 'react-router-dom';
 
-import Notfoundpage from './pages/404/NotFoundPage';
 import Loginpage from './pages/auth/LoginPage';
 import Dashboardpage from './pages/dashboard/DashBoard';
+import Notfoundpage from './pages/404/NotFoundPage';
 
 
 function AppRoutingFinal() {
 
-  // TODO Change to value from sessionStorage (or something dinamic)
   let loggedIn = true; 
 
   return (
@@ -35,7 +34,6 @@ function AppRoutingFinal() {
             (<Redirect from='/' to='/login'/>)
           }
         </Route>
-
         <Route component={Notfoundpage}/>
       </Switch>
     </Router>
