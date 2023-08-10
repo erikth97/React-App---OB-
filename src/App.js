@@ -6,9 +6,9 @@ import TaskListComponent from './components/container/task_list';
 import GreetingStyled from './components/pure/greetingStyled';
 import Father from './components/container/father';
 import OptionalRender from './components/pure/optionalRender';
-import LoginFormik from './components/pure/forms/loginFormik';
 import Loginformik from './components/pure/forms/loginFormik';
 import Registerformik from './components/pure/forms/registerFormik';
+import AsyncExample from './components/pure/AsyncExample';
 
 function App() {
   return (
@@ -31,6 +31,9 @@ function App() {
           {/*Ejemplos de uso de Formik y yup */}
           {/*<Loginformik></Loginformik> */}
           {/*<Registerformik></Registerformik> */}
+
+          {/* Ejemplos de procesos asincronos*/}
+          <AsyncExample></AsyncExample>
 
           {/*PROYECTO FINAL */}
           {/*<TaskListComponent></TaskListComponent>*/}
