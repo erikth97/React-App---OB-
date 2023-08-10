@@ -2,7 +2,7 @@ import React from 'react';
 
 // material UI components
 import Link from '@mui/material/Link'
-import { Typography } from '@mui/material/Typography';
+import Typography from '@mui/material/Typography';
 
 const Copyrigth = () => {
     return (
@@ -11,8 +11,8 @@ const Copyrigth = () => {
         <Link color='inherit' href='https://imaginaformacion.com'>
             Imagina Formacion
         </Link>
-        {' '}
-        {new Date().getFullYear()}
+        { ' ' }
+        { new Date().getFullYear() }
       </Typography>
     );
 }
