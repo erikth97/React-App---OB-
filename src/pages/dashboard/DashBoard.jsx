@@ -1,24 +1,25 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 import Button from '@mui/material/Button';
 
-import  Copyright  from '../../components/pure/Copyrigth';
+import Copyrigth from '../../components/pure/Copyrigth';
 
 const Dashboardpage = () => {
 
-   const history = useHistory();
+    const history = useHistory();
 
-   const logout = () => {
-      history.push('/login')
-   }
+    const logout = () => {
+        history.push('./login')
+    }
 
     return (
         <div>
               <Button variant="contained" onClick={logout}>Logout</Button>
-              <Copyright></Copyright>
+              <Copyrigth></Copyrigth>
         </div>
     );
 }
 
 export default Dashboardpage;
+ 
