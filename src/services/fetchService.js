@@ -10,9 +10,9 @@ export const getAllUsers = async () => {
 }
 
 
-export const getAllUsers = async () => {
+export const getAllPagedUsers = async (page) => {
     
-    let response = await fetch('https://reqres.in/api/users');
+    let response = await fetch(`https://reqres.in/api/users?page=${page}`);
     console.log('Response:', response);
     console.log('Status:', response.status);
     console.log('OK?:', response.ok);
