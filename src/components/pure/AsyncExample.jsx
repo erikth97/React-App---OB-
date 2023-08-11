@@ -1,4 +1,5 @@
 
+import { error } from 'console';
 import React from 'react';
 
 const AsyncExample = () => {
@@ -68,6 +69,15 @@ const AsyncExample = () => {
 
     }
 
+    const multiplePromise = async () => {
+        let results = await Promise.all(
+            [
+                fetch('https://reqres.in/api/users'),
+                fetch('https://reqres.in/api/users?page=2')
+            ]
+        ).catch((error) => alert(`Something went whit your URLs: ${error} (check your console)`))
+    }
+
 
     return (
         <div>
@@ -78,6 +88,7 @@ const AsyncExample = () => {
             <button onClick={obtainMessage}>Recive message in 2 seconds</button>    
             <button onClick={consumeError}>Obtain Error</button>  
             <button onClick={urlNotFound}>Request to Unknow URL</button>  
+            <button onClick={multiplePromise}>Multiple Promise</button>  
         </div>
     );
 }
