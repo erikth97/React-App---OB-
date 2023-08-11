@@ -1,22 +1,22 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
-// Añadimos Bootstrap a nuestro proyecto
+// Añadimos bootstrap a nuestro proyecto
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
-// ! Importante: los estilos propios, deben ir debajo del bootstrap para que no los pise.
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+// ! Importante: los estilos propios deben ir debajo del bootstrap para que no los pise
 import './index.css';
-
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import AppRoutingOne from './AppRoutingOne';
+import App from './App';
 
-ReactDOM.render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-    {/* <App /> */}
-    <AppRoutingOne />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <App/>
+    {/* <AppRoutingOne/> */}
+    {/* <AppRoutingFinal/> */}
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
