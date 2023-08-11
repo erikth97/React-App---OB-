@@ -3,7 +3,10 @@ import { getAllUsers } from '../../services/fetchService';
 
 const Fetchexample = () => {
 
-    const [users, setUsers] = useState( [] )
+    const [users, setUsers] = useState([]);
+    const [totalUsers, setTotalUsers] = useState(12)
+    const [usersPerPage, setUsersPerPages] = useState(6);
+    const [pages, setPages] = useState(2);
 
     useEffect(() => {
         obtainUsers();
@@ -14,6 +17,9 @@ const Fetchexample = () => {
         .then((response) => {
             console.log('All users', response.data);
             setUsers(response.data);
+            setTotalUsers(response.total);
+            setUsersPerPages(response.per_page);
+            setPages(response.total_pages);
         })
         .catch((error) => {
             alert(`Error while retreving the users: ${error}`)
@@ -35,6 +41,10 @@ const Fetchexample = () => {
                </p>)
                 )
             }
+            <p>Showing {usersPerPage} users of {totalUsers}</p>
+            <button onClick={}>
+                1
+            </button>
         </div>
     );
 }
