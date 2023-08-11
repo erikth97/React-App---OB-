@@ -9,6 +9,7 @@ import OptionalRender from './components/pure/optionalRender';
 import Loginformik from './components/pure/forms/loginFormik';
 import Registerformik from './components/pure/forms/registerFormik';
 import AsyncExample from './components/pure/AsyncExample';
+import Observableexample from './components/pure/ObservableExample';
 
 function App() {
   return (
@@ -33,7 +34,8 @@ function App() {
           {/*<Registerformik></Registerformik> */}
 
           {/* Ejemplos de procesos asincronos*/}
-          <AsyncExample></AsyncExample>
+          {/*<AsyncExample></AsyncExample> */}
+          <Observableexample></Observableexample>
 
           {/*PROYECTO FINAL */}
           {/*<TaskListComponent></TaskListComponent>*/}
