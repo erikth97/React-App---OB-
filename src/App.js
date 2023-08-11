@@ -10,6 +10,7 @@ import Loginformik from './components/pure/forms/loginFormik';
 import Registerformik from './components/pure/forms/registerFormik';
 import AsyncExample from './components/pure/AsyncExample';
 import Observableexample from './components/pure/ObservableExample';
+import Fetchexample from './components/pure/FetchExample';
 
 function App() {
   return (
@@ -35,7 +36,8 @@ function App() {
 
           {/* Ejemplos de procesos asincronos*/}
           {/*<AsyncExample></AsyncExample> */}
-          <Observableexample></Observableexample>
+          {/* <Observableexample></Observableexample> */}
+          <Fetchexample></Fetchexample>
 
           {/*PROYECTO FINAL */}
           {/*<TaskListComponent></TaskListComponent>*/}
