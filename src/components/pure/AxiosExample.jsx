@@ -5,15 +5,16 @@ const Axiosexample = () => {
 
     const [user, setUser] = useState(null);
 
-    //useEffect(() => {
-    //obtainUser();
-    //}, []);       
+    useEffect(() => {
+       obtainUser();
+    }, []);       
 
     const obtainUser = () => {
         getRandomUser()
         .then((response) => {
             if(response.status === 200) {
-                setUser(response.data.results)
+                setUser(response.data.results[0])
+           
             }
         })
         .catch((error) => {
@@ -24,23 +25,22 @@ const Axiosexample = () => {
     return (
         <div>
            <h1>Axios</h1>
-           { user != null ? 
+
+           { user !== null ? 
                 (
                     <div>
-                        {/*<img src={user.picture.large} alt="avatar" />*/}
+                        <img src={user.picture.large} alt="avatar" />
                         <h2>{user.name.title} {user.name.frist} {user.name.last}</h2>
                         <h3>{user.email}</h3>
                     </div>
                 )
-            :
-            ( 
+            :null }
                 <div>
                     <p>Generate a new User</p>
                     <button onClick={obtainUser}>
                         Random User
                     </button>
-                </div>
-            )}   
+                </div> 
         </div>
     );
 }     
